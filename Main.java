@@ -1,63 +1,31 @@
-import java.util.Scanner;
-
-public class Main{
-    public static void main(String[] args){
-        /*
-        System.out.println("hello world");
-        //数据类型
-        int age = 20;
-        double height = 170;
-        char gender = '男';
-        boolean ishandsome = true;
-        String name = "mike";
-        System.out.println(age);
-        System.out.println(height);
-        System.out.println(gender);
-        System.out.println(ishandsome);
-        System.out.println(name);
-
-        //变量 运算符
-        int a = 10;
-        int b = 3;
-        System.out.println(a+b);
-        System.out.println(a-b);
-        System.out.println(a*b);
-        System.out.println(a/b);
-        System.out.println(a%b);
-
-        //if else 判断
-        int aage = 20;
-        if (aage < 18){
-            System.out.println("no 18");
-        }else{
-            System.out.println("yes 18");
-        }
-        //Scanner
-        Scanner sc = new Scanner(System.in);
-        System.out.println("请输入你的年龄");
-        int aaage = sc.nextInt();
-        System.out.println("你的年龄是"+age);*/
-        Scanner sc = new Scanner(System.in);
-        System.out.println("请输入你的姓名：");
-        String name = sc.nextLine();
-
-        System.out.println("请输入你的年龄：");
-        int age = sc.nextInt();
-
-        System.out.println("请输入你的身高：");
-        double height = sc.nextDouble();
-
-        System.out.println("请输入你的体重:");
-        double weight = sc.nextDouble();
-
-        double BMI = weight/(height*height);
-
-        System.out.println("hello"+name);
-        System.out.println("your bmi is:"+BMI);
-        if(age > 18){
-            System.out.println("你已成年");
-        }else{
-            System.out.println("你未成年");
-        }
+public class Main {
+    public static int add(int a, int b) {
+        return a + b;
     }
+        public static double calcBMI(double height, double weight) {
+            return weight / (height * height);
+        }
+
+        public static void checkAge(int age) {
+            if (age >= 18) {
+                System.out.println("已成年");
+            } else {
+                System.out.println("未成年");
+            }
+        }
+        public static void main(String[] args) {
+            int result1 = add(1, 1);
+            System.out.println(result1);
+            double result2 = calcBMI(1.7, 70);
+            System.out.println(result2);
+            checkAge(20);
+            Person p = new Person();
+            p.name = "Mike";
+            p.age = 20;
+            p.height = 1.7;
+            p.weight = 70;
+            System.out.println("name:" + p.name);
+            System.out.println("BMI:" + p.calcBMI());
+        }
+
 }
