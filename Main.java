@@ -1,31 +1,27 @@
-public class Main {
-    public static int add(int a, int b) {
-        return a + b;
-    }
-        public static double calcBMI(double height, double weight) {
-            return weight / (height * height);
+public class Main{
+    public static void main(String[] args){
+        int[] nums = new int[5];
+        nums[0] = 10;
+        nums[1] = 20;
+        nums[2] = 30;
+        nums[3] = 40;
+        nums[4] = 50;
+        int sum = 0;
+        for(int i = 0;i < nums.length;i++){
+            sum = sum + nums[i];
         }
-
-        public static void checkAge(int age) {
-            if (age >= 18) {
-                System.out.println("已成年");
-            } else {
-                System.out.println("未成年");
+        System.out.println(sum);
+        //数组求和
+        int max = nums[0];
+        for(int i = 0;i < nums.length;i++){
+            if(nums[i] > max){
+                max = nums[i];
             }
         }
-        public static void main(String[] args) {
-            int result1 = add(1, 1);
-            System.out.println(result1);
-            double result2 = calcBMI(1.7, 70);
-            System.out.println(result2);
-            checkAge(20);
-            Person p = new Person();
-            p.name = "Mike";
-            p.age = 20;
-            p.height = 1.7;
-            p.weight = 70;
-            System.out.println("name:" + p.name);
-            System.out.println("BMI:" + p.calcBMI());
-        }
-
+        System.out.println(max);
+        Person p = new Person("mike",20);
+        System.out.println(p.getAge());
+        p.setAge(21);
+        System.out.println(p.getAge());
+    }
 }
