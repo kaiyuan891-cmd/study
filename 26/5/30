@@ -1,0 +1,69 @@
+import java.util.ArrayList;
+public class Main{
+    public static void main(String[] args){
+    String str1 = "hello";
+    System.out.println(str1.length());//获取字符串长度
+    String str2 = "hello";//判断字符串是否相等
+    if(str1.equals(str2)){
+        System.out.println("str1 = str2");
+    }else{
+     System.out.println("str1 != str2");
+    }
+    String str3 = "123456";//截取字符串
+         System.out.println(str3.substring(1,4));//234包括开始，不包括结束
+        String str4 = "hello world";//判断是否包含
+        System.out.println(str4.contains("hello"));
+        System.out.println(str4.toUpperCase());//转大写
+        String str5 = "HELLO";
+        System.out.println(str5.toLowerCase());//转小写
+        //problem 1
+        String name = "ChatGPT";
+        System.out.println("name的长度是" + name.length());
+        //problem 2
+        String email = "abc@qq.com";
+        if(email.contains("@qq.com")){
+            System.out.println("yes");
+        }else {
+            System.out.println("No");
+        }
+        //problem 3
+        String phone = "13812345678";
+        System.out.println(phone.substring(0,3));
+    ArrayList<String> list = new ArrayList<>();
+        list.add("Tom");
+        list.add("Jack");
+        list.add("Mike");
+        System.out.println(list.get(0));
+        System.out.println(list.size());
+        for(int i = 0;i<list.size();i++){
+            System.out.println(list.get(i));
+        }
+        list.remove(0);
+        for(int i = 0;i<list.size();i++){
+            System.out.println(list.get(i));
+        }
+    ArrayList<Person> persons = new ArrayList<>();
+        persons.add(new Person("Tom",18));
+        persons.add(new Person("Jack",19));
+        persons.add(new Person("Mike",20));
+        for(int i =0;i < persons.size();i++) {
+            Person p = persons.get(i);
+            System.out.println("Name:" + p.getName() +"Age:" +  p.getAge());
+        }
+
+    }
+}
+class Person{
+    private String name;
+    private int age;
+    public Person(String name,int age){
+        this.name = name;
+        this.age = age;
+    }
+    public String getName(){
+        return name;
+    }
+    public int getAge(){
+        return age;
+    }
+}
