@@ -1,0 +1,86 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+public class Main{
+    public static void main(String[] args){
+//lambda
+      /*Swim s = () -> {
+          System.out.println("Swimming");
+      };
+      s.swim();
+
+      Add a = (c,b) ->{
+        return c + b;
+      };
+    int sum = a.add(3,5);
+    System.out.println(sum);
+
+      Compare c = (x,y) -> x > y;
+      System.out.println(c.compare(10,5));*/
+
+      /*Student a = new Student("王某",15,99);
+      Student b = new Student("李某",17,98);
+      Student c = new Student("张某",16,100);
+      ArrayList<Student> stu = new ArrayList<>();
+      stu.add(a);
+      stu.add(b);
+      stu.add(c);
+      for(Student x : stu){
+          x.showInfo();
+      }
+      Collections.sort(stu,(o1,o2) ->o1.getAge()-o2.getAge()
+      );
+      System.out.println("排序后");
+        for(Student x : stu){
+            x.showInfo();
+        }*/
+//forEach
+       /* ArrayList<String> str = new ArrayList<>();
+        str.add("Java");
+        str.add("Python");
+        str.add("C++");
+        str.stream()
+                        .map(
+                                s ->"I am learning "+ s
+                        )
+                                .forEach(
+                                        System.out::println
+                                );
+        str.forEach(
+                s ->System.out.println(s)
+        );
+        str.forEach(System.out::println);*/
+
+//stream
+    /*    ArrayList<Student> list = new ArrayList<>();
+        list.add(new Student("张三",18,60));
+        list.add(new Student("李四",18,100));
+        list.add(new Student("王五",18,80));
+        list.add(new Student("赵六",18,50));
+        list.stream()
+        .filter(s ->s.getGrade() >= 80)
+                .forEach(System.out::println);//自动调用toString);
+        //map
+        System.out.println("转换后");
+        list.stream()
+                .map(s ->"student:" +s)
+                .forEach(System.out::println);
+        System.out.println("转换前");
+        list.forEach(System.out::println);
+*/
+        ArrayList<Student>  list = new ArrayList<>();
+        list.add(new Student("张三",18,60));
+        list.add(new Student("李四",20,100));
+        list.add(new Student("王五",19,80));
+        list.add(new Student("赵六",21,50));
+        list.stream()
+                .filter(s -> s.getGrade() >= 80)
+                .forEach(System.out::println);//筛选80分以上的同学
+        Collections.sort(list,(o1,o2) ->Double.compare(o1.getGrade(),o2.getGrade()));
+        list.forEach(System.out::println);//按成绩排序
+        list.stream()
+                .filter(s -> s.getGrade() >= 80)
+                .map(s ->"优秀学生："+s.getName())
+                .forEach(System.out::println);
+        }
+}
